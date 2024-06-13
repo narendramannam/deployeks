@@ -1,0 +1,18 @@
+logLevel: info
+ingressClass: alb
+replicaCount: 2
+resources:
+  limits:
+    cpu: 150m
+    memory: 200Mi
+  requests:
+    cpu: 100m
+    memory: 120Mi
+enableWafv2: true
+enableWaf: true
+serviceAccount:
+  name: aws-load-balancer-controller
+createIngressClassResource: true
+ingressClassParams:
+  create: true
+priorityClassName: system-cluster-critical
